@@ -1,0 +1,40 @@
+Automate the Scenario Successfully
+
+Automation Frameworks: 
+	> Modular: Breaking the test scenario's which are having reusable steps into a module login(),bookAppointment()
+	>DAta Driven:Maintaining the input data - xlsx,xls,xml,json,file.txt: login(uname,pword)
+	>Keyword: Map keywords to the modules and mention these keywords in the xlsx , xls
+	>Hybrid: Combination of these framework and some best practices
+			AppLibrary.java/Utility
+			HelperClass.java
+			TestBaseClass.java
+			config/mmp.properties
+
+
+Page Object Model:
+		LoginPage.java: Page Object it means >>LoginPage lpage=new LoginPage();
+			login()
+			register()
+
+
+Access Modifiers:
+	default : cannot be accessed between different packages
+	protected: accessed between diff pakcages via extends
+
+
+
+	@Test
+	@TEst
+	
+
+
+
+
+
+
+
+
+
+
+
+
