@@ -1,0 +1,35 @@
+Github:
+	Source Code REpository
+	Versioning: Commit ID
+	WebBased Application
+	Branching: master,develop,feature/release,hotfix
+	Pull Request
+	Push,Pull from the local github
+	Collaboration tool
+
+
+Signup : create an account
+
+
+branches:
+	main : 2 commit id's
+	develop: 2 from master + 3 commit id's
+	pull request: diff 3 commit id's
+	merge the develop into main : 5 commits + 1 commit id's
+
+Steps to push your code:
+1. Repo URL : https://github.com/sudheer51/GigaMMP.git
+2. Get Collaborator access.
+3. Clone the code into the Eclipse>master branch
+	a. import as a Git repository : https://github.com/sudheer51/GigaMMP.git
+	b. once the code is downloaded > close the wizard.
+	c. import as a existing project
+4. Create a branch
+5. Perform the changes
+6. Push the code
+
+
+
+
+
+
