@@ -35,7 +35,7 @@ public class TestBaseClass {
 	@BeforeClass
 	public void instantiateDriver() throws IOException
 	{
-		System.out.println("First line of the instantiate method");
+		System.out.println("First line of the instantiate method by Student1");
 		 
 		String browser = prop.getProperty("browser");
 		if(browser.equalsIgnoreCase("chrome")){
