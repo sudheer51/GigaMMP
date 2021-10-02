@@ -29,7 +29,7 @@ public class TestBaseClass {
 		File f = new File(absolutePath);
 		FileInputStream fis = new FileInputStream(f);
 		prop.load(fis);
-		System.out.println("Adding the comment in the load properties");
+		System.out.println("Adding the comment in the load");
 		
 	}
 	@BeforeClass
