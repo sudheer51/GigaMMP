@@ -1,49 +1,42 @@
 package org.iit.healthcare.mmp.patientmodule;
 
 import java.util.HashMap;
-
-import org.iit.TestBaseClass;
 import org.iit.healthcare.mmp.HelperClass;
 import org.iit.healthcare.mmp.patientmodule.pages.ScheduleAppointmentPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-/**
- * 1. Login
-2. Click on Tab ->Schedule Appointment
-3. Click on Create NEW Appointment
-4. Click on Book Appointment Btn
-5. Select Date and Time and continue
-6. Enter the symptoms and click on continue.
-7. Validate the data is displayed in the home page.
-
-
-p1: convert into a method
-p2: parameterize the method
-p3: return the outcome for validation
-
- *
- */
-
-
-public class ScheduleAppointmentTests extends TestBaseClass  {
-	 @Test
-	public void validateScheduleAppointment()
-	{
-	 
-	 	 
-	 	HelperClass helper = new HelperClass(driver);
-	 	helper.launchApplicationURL(prop.getProperty("patienturl"));
-		helper.login(prop.getProperty("patientUser"),prop.getProperty("patientPassword"));
-		helper.navigateToAModule("Schedule Appointment");
-		ScheduleAppointmentPage sPage = new ScheduleAppointmentPage(driver);
-		HashMap<String,String> expHMap = sPage.bookAppointment("Smith","Fever");
-		HashMap<String,String> actualHMap =sPage.fetchPatientPortalData();
-		Assert.assertTrue(expHMap.equals(actualHMap));
-	}
- 
-	 
-	 
-	 
+public class ScheduleAppointmentTests extends BaseTest {
+		
+	@Test(priority=1)
+	   public void scheduleAppointment() throws Exception
+	   {
+		
+		   logger=reports.createTest("Book Appointment");
+		   
+		   HelperClass helper = new HelperClass(driver);		   
+		   helper.launchApplication(prop.getProperty("URL"));	
+		   logger.info("opened patient url");
+		   helper.loginCredentials(prop.getProperty("patientUser"),prop.getProperty("patientPassword")); 	
+		   logger.pass("Login Successful");
+		   helper.navigatetoModule("Schedule Appointment");		   		
+		   ScheduleAppointmentPage s_appointment = new ScheduleAppointmentPage(driver);
+		   
+		   //Calling method that takes all details as input
+		   //s_appointment.bookAppointments("Dr.Beth","October","3","2022","10Am","Fever and cough");	
+		   
+		   //Calling method that takes appointment date in date format
+		   //boolean result = s_appointment.dateCheck("Dr.Beth","10/25/2022","10Am","Fever");
+		   //Assert.assertTrue(result);		   
+		   
+		   //Calling the hashMap method
+		   HashMap<String,String> expHashMap = s_appointment.dateCheck1("Beth","Fever","12/25/2021","10Am");
+		   System.out.println("input given:"+expHashMap);
+		   HashMap<String,String> actualHashMap = s_appointment.patientPortal();
+		   System.out.println("Chk if input entered:"+actualHashMap);	
+		   logger.pass("Booking Appointment Successful");
+		   Assert.assertTrue(expHashMap.equals(actualHashMap));		  		      
+	   
+	   }       
 
 }
