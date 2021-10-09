@@ -22,10 +22,9 @@ public class TestBaseClass {
 	
 	
 	@BeforeTest
-	@Parameters({"path"})
-	public void loadProperties(String path) throws IOException
+	public void loadProperties() throws IOException
 	{
-		String absolutePath = System.getProperty("user.dir")+path;
+		String absolutePath = System.getProperty("user.dir")+"//config//mmp.properties";
 		File f = new File(absolutePath);
 		FileInputStream fis = new FileInputStream(f);
 		prop.load(fis);
