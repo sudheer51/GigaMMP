@@ -12,7 +12,7 @@ public class PayFeesTest extends BaseTest{
 
 		logger=reports.createTest("PayFees");
 		HelperClass helper = new HelperClass(driver);
-		helper.launchApplication(prop.getProperty("URL"));		  	   
+		helper.launchApplication(prop.getProperty("patienturl"));		  	   
 		helper.loginCredentials(prop.getProperty("patientUser"),prop.getProperty("patientPassword")); 		
 		logger.pass("Login Success");
 		

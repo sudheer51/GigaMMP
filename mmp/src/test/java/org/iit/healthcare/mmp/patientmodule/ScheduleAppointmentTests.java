@@ -15,7 +15,7 @@ public class ScheduleAppointmentTests extends BaseTest {
 		   logger=reports.createTest("Book Appointment");
 		   
 		   HelperClass helper = new HelperClass(driver);		   
-		   helper.launchApplication(prop.getProperty("URL"));	
+		   helper.launchApplication(prop.getProperty("patienturl"));	
 		   logger.info("opened patient url");
 		   helper.loginCredentials(prop.getProperty("patientUser"),prop.getProperty("patientPassword")); 	
 		   logger.pass("Login Successful");
