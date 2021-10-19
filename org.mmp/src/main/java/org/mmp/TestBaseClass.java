@@ -46,13 +46,13 @@ public class TestBaseClass {
 		String browser=prop.getProperty("browser");
 		if(browser.equalsIgnoreCase("chrome"))
 		{
-			System.out.println("Using Chrome Browser");
+			System.out.println("Using Chrome Browser as browser is chrome");
 			WebDriverManager.chromedriver().setup();
 			driver=new ChromeDriver();
 		}
 		else if(browser.equalsIgnoreCase("firefox"))
 		{
-			System.out.println("Using Firefox browser");
+			System.out.println("Using Firefox browser as browser is firefox");
 			WebDriverManager.firefoxdriver().setup();
 			driver=new FirefoxDriver();
 		}
