@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import org.iit.mmp.Utilities;
 public class ScheduleAppointmentsPage {
 	protected WebDriver driver;
 
@@ -61,6 +61,7 @@ public class ScheduleAppointmentsPage {
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='status']")));
 
 			driver.findElement(By.id("ChangeHeatName")).click();
+			driver.findElement(By.name("sym")).clear();
 
 			driver.findElement(By.id("sym")).sendKeys("Fever");
 			appHMap.put("sym",driver.findElement(By.id("sym")).getAttribute("value"));

@@ -3,12 +3,14 @@ package org.mmp;
 import java.util.HashMap;
 import java.util.List;
 
+import org.iit.mmp.HelperClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class ViewReportsPage {
-	protected WebDriver driver;
+    protected WebDriver driver;
+    HelperClass helper;
 	public ViewReportsPage(WebDriver driver)
 	{
 		this.driver=driver;
@@ -50,9 +52,10 @@ public class ViewReportsPage {
 			//System.out.println(title);
 			String keyval = "titlename" + String.valueOf(i);
 			hMap.put(keyval, title);
-			System.out.println(hMap);
+		
 		}
 	
+		System.out.println(hMap);
 		return hMap;
 	}
 
