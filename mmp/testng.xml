@@ -5,6 +5,7 @@
   <parameter name="path" value="/config/mmp.properties" />
     <classes>
       <class name="org.iit.healthcare.mmp.patientmodule.ScheduleAppointmentTests"/>
+      <class name="org.iit.healthcare.mmp.patientmodule.PayFeesTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
