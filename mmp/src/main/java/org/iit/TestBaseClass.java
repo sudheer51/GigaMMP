@@ -9,6 +9,7 @@ import org.apache.poi.util.SystemOutLogger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -38,7 +39,7 @@ public class TestBaseClass {
 		 
 		String browser = prop.getProperty("browser");
 		if(browser.equalsIgnoreCase("chrome")){
-			System.out.println("Inside if");
+			
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		}
@@ -49,8 +50,13 @@ public class TestBaseClass {
 		}
 		driver.manage().window().maximize();
 		System.out.println("LastLine of the instatiate method of TestBase");
-		 
-	 
 	}
+	
+	/**
+	 * @AfterMethod
 	 
+	public void tearDown(){
+		driver.close();
+	}
+	 **/
 }

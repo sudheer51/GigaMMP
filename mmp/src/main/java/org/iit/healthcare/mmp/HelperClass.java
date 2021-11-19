@@ -43,6 +43,14 @@ WebDriver driver;
 		return actual;
 	}
  
+	public String adminlogin(String uname,String pword)
+	{
+		driver.findElement(By.id("username")).sendKeys(uname);
+		driver.findElement(By.id("password")).sendKeys(pword);
+		driver.findElement(By.name("admin")).click();
+		String actual = driver.findElement(By.tagName("h3")).getText();
+		return actual;
+	}
 	public void captureScreenshot(String tc_Name) throws IOException
 	{
 		System.out.println("Inside Capturing Screenshot method");
