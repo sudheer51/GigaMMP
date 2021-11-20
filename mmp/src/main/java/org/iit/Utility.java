@@ -50,6 +50,13 @@ public class Utility {
 			
 		return str+rand.nextInt(range);
 	}
+public static int randomInt(int digits){
+		
+	    int minimum = (int) Math.pow(10, digits - 1); // minimum value with 2 digits is 10 (10^1)
+	    int maximum = (int) Math.pow(10, digits) - 1; // maximum value with 2 digits is 99 (10^2 - 1)
+	    Random random = new Random();
+	    return minimum + random.nextInt((maximum - minimum) + 1);
+	}
 	
 	/**
 	 * This will choose a random state
@@ -65,7 +72,7 @@ public class Utility {
 				"Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York",
 				"North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota",
 				"Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" };
-
+		rand = new Random();
 		int num = rand.nextInt(49);
 		state = sArray[num];
 		System.out.println(state);		

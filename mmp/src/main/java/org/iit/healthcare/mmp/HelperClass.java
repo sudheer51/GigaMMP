@@ -38,4 +38,33 @@ public class HelperClass  {
 	}
 */
 	
+	public  void launchApplicationURL(String url)	{
+		driver.get(url);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+	public void navigateToAModule(String mName)
+	{
+		driver.findElement(By.xpath("//span[normalize-space()='"+mName+"']")).click();
+	}
+	public String login(String uname,String pword)
+	{
+		driver.findElement(By.id("username")).sendKeys(uname);
+		driver.findElement(By.id("password")).sendKeys(pword);
+		driver.findElement(By.name("submit")).click();
+		String actual = driver.findElement(By.tagName("h3")).getText();
+		return actual;
+	}
+	public String adminlogin(String uname,String pword)
+	{
+		driver.findElement(By.id("username")).sendKeys(uname);
+		driver.findElement(By.id("password")).sendKeys(pword);
+		driver.findElement(By.name("admin")).click();
+		String actual = driver.findElement(By.tagName("h3")).getText();
+		return actual;
+	}
+	public void closeDriver() {
+        driver.close();
+}
+	
+	
 }
