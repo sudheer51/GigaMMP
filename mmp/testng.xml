@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite" verbose="5">
-  <test thread-count="5" name="Test">
-  <parameter name="path" value="/config/mmp.properties" />
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="Test">
+   <!-- <Parameter name="path" value = "mmpConfig/config.properties"  />  -->
     <classes>
       <class name="org.iit.healthcare.mmp.patientmodule.ScheduleAppointmentTests"/>
+      <class name="org.iit.healthcare.mmp.adminmodule.AdminMessagesTests"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

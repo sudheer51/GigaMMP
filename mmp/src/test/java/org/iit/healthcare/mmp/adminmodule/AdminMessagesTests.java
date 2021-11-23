@@ -49,10 +49,10 @@ public class AdminMessagesTests extends TestBaseClass{
 			actualmsg = adminMessagePage.readAlertValidation();
 			Assert.assertEquals(expectedmsg, actualmsg);
 									
-			for(HashMap.Entry<String, String> entry : patientHMap.entrySet())
+			/*for(HashMap.Entry<String, String> entry : patientHMap.entrySet())
 			{
 				System.out.println("Patient Hashmap Retrieve  :  "+ entry.getKey()+ "  :   "+ entry.getValue());
-			}
+			}*/
 			
 		 	helper.launchApplicationURL(prop.getProperty("urlAdmin"));
 			helper.adminlogin(prop.getProperty("adminUser"),prop.getProperty("adminPassword"));
@@ -60,10 +60,10 @@ public class AdminMessagesTests extends TestBaseClass{
 			
 			HashMap <String, String> adminHMap = adminMessagePage.fetchPatientData_inAdminMessage();
 			
-			for(HashMap.Entry<String, String> entry : adminHMap.entrySet())
+			/*for(HashMap.Entry<String, String> entry : adminHMap.entrySet())
 			{
 				System.out.println("Admin Hashmap Retrieve  "+ entry.getKey()+ "  :   "+ entry.getValue());
-			}
+			}*/
 			Assert.assertTrue(patientHMap.equals(adminHMap));
 			helper.closeDriver();
 			

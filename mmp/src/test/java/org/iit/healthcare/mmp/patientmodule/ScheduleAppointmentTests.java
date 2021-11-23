@@ -30,14 +30,12 @@ public class ScheduleAppointmentTests extends TestBaseClass  {
 	 @Test
 	public void validateScheduleAppointment()
 	{
-	 
-	 	 
 	 	HelperClass helper = new HelperClass(driver);
 	 	helper.launchApplicationURL(prop.getProperty("patienturl"));
 		helper.login(prop.getProperty("patientUser"),prop.getProperty("patientPassword"));
 		helper.navigateToAModule("Schedule Appointment");
 		ScheduleAppointmentPage sPage = new ScheduleAppointmentPage(driver);
-		HashMap<String,String> expHMap = sPage.bookAppointment("Smith","Fever");
+		HashMap<String,String> expHMap = sPage.bookAppointment("Alexander","Vertigo");
 		HashMap<String,String> actualHMap =sPage.fetchPatientPortalData();
 		Assert.assertTrue(expHMap.equals(actualHMap));
 	}

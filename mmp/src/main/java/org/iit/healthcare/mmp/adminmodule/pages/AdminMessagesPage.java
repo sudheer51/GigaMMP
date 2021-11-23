@@ -71,8 +71,6 @@ public class AdminMessagesPage {
 		patHMap.put("Message", driver.findElement(By.xpath("//table[@class='table']//tr[3]/td[2]")).getText() );
 		//patHMap.put("TodayDate", driver.findElement(By.xpath("//table[@class='table']//tr[2]/td[3]")).getText());
 		
-		System.out.println(" Admin page date gettext()  : "+driver.findElement(By.xpath("//table[@class='table']//tr[2]/td[3]")).getText());
-		
 		return patHMap;
 	}
 
@@ -81,7 +79,6 @@ public class AdminMessagesPage {
 		boolean result = false;
 		if(hMap.get("Subject").equals(subject) && hMap.get("Description").equals(description) &&hMap.get("Name").equals(name))
 		{
-
 			System.out.println("Passed");
 			result = true;
 
