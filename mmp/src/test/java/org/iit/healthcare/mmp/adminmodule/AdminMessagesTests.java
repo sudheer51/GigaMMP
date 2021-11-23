@@ -65,6 +65,7 @@ public class AdminMessagesTests extends TestBaseClass{
 				System.out.println("Admin Hashmap Retrieve  "+ entry.getKey()+ "  :   "+ entry.getValue());
 			}*/
 			Assert.assertTrue(patientHMap.equals(adminHMap));
+			System.out.println(" 2 Hashmaps successfully matched true");
 			helper.closeDriver();
 			
 	}

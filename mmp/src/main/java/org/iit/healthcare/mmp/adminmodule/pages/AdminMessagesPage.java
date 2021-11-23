@@ -70,7 +70,7 @@ public class AdminMessagesPage {
 		patHMap.put("Reason",driver.findElement(By.xpath("//table[@class='table']//tr[2]/td[2]")).getText());
 		patHMap.put("Message", driver.findElement(By.xpath("//table[@class='table']//tr[3]/td[2]")).getText() );
 		//patHMap.put("TodayDate", driver.findElement(By.xpath("//table[@class='table']//tr[2]/td[3]")).getText());
-		
+		System.out.println(" All patient data has been pushedinto the patient hashmap");
 		return patHMap;
 	}
 
