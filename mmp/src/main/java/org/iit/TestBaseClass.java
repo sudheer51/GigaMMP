@@ -19,13 +19,14 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class TestBaseClass {
 
 	protected WebDriver driver;
-	protected Properties prop = new Properties();
+	protected static Properties prop = new Properties();
 	
 	
 	@BeforeTest
 	public void loadProperties() throws IOException
 	{
 		String absolutePath = System.getProperty("user.dir")+"//config//mmp.properties";
+		System.out.println("Absolute path =  " + absolutePath);
 		File f = new File(absolutePath);
 		FileInputStream fis = new FileInputStream(f);
 		prop.load(fis);
@@ -36,8 +37,9 @@ public class TestBaseClass {
 	public void instantiateDriver() throws IOException
 	{
 		System.out.println("First line of the instantiate method by Student1");
-		 
+		 System.out.println("PRoperties  : "+ prop);
 		String browser = prop.getProperty("browser");
+		System.out.println(" Browser   :  "+ browser);
 		if(browser.equalsIgnoreCase("chrome")){
 			
 			WebDriverManager.chromedriver().setup();
